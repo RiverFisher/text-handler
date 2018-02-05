@@ -78,7 +78,12 @@
                   style="cursor: pointer;"
                   data-received-data="{{ job.receivedData }}"> . . .</span>
           </td>
-          <td>{{ job.handledData }}</td>
+          <td>
+            {{ job.handledData|slice(0, 50)|raw }}
+            <span class="received-text-badge badge badge-pill badge-light"
+                  style="cursor: pointer;"
+                  data-received-data="{{ job.handledData }}"> . . .</span>
+          </td>
           <td>
             {% for method in job.methods %}
               <span class="badge badge-pill badge-secondary">{{ method }}</span>
@@ -106,7 +111,7 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="modalTitle">Received text</h5>
+          <h5 class="modal-title" id="modalTitle">Text INFO</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
