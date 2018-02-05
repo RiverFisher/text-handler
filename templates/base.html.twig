@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    {% block stylesheets %}
+    <!-- Bootstrap 4 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+          integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+          crossorigin="anonymous">
+    <!-- Animate -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" />
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css" />
+    <!-- Bootstrap Datepicker -->
+    <link rel="stylesheet" href="{{ asset('css/datepicker.min.css') }}">
+    <style>
+      /* Template styles */
+      :root {
+        --main-background-color: #FFFFFF;
+        --unclean-white-color: #E9DDC7;
+        --light-emerald-color: #90BF49;
+        --light-green-color: #A3D73A;
+        --saturated-green-color: #518916;
+      }
+      body {
+        /*background-image: url("bundles/platformlanding/images/body_background.jpg");*/
+        /*background-repeat: repeat;*/
+        background-color: var(--main-background-color);
+      }
+
+      /* Navigation bar styles */
+      .navbar-white {
+        background-color: var(--unclean-white-color);
+        /*background: linear-gradient(*/
+            /*to bottom,*/
+            /*var(--unclean-white-color),*/
+            /*var(--main-background-color)*/
+        /*);*/
+      }
+      .navbar-white a {
+        color: #000000;
+      }
+      .navbar {
+        padding: .7rem 1rem;
+        position: fixed;
+        left: 0;
+        right: 0;
+        border-bottom: 3px solid #000000;
+      }
+    </style>
+    {% endblock %}
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+  </head>
+  <body>
+    {#<nav class="navbar sticky-top navbar-expand-lg navbar-white hidden">#}
+      {#<a class="navbar-brand" href="#">#}
+        {#<img src="http://stores.clothes2order.com/images/uploads/store_layout/store-logo-6102.png"#}
+             {#width="30" height="30" alt="">#}
+        {#<span style="font-weight: 900;">SweetHome</span>#}
+      {#</a>#}
+      {#<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">#}
+        {#<i class="fas fa-bars fa-lg"></i>#}
+      {#</button>#}
+
+      {#<div class="collapse navbar-collapse" id="navbarSupportedContent">#}
+        {#<ul class="navbar-nav mr-auto">#}
+          {#<li class="nav-item active">#}
+            {#<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>#}
+          {#</li>#}
+          {#<li class="nav-item">#}
+            {#<a class="nav-link" href="#">Link</a>#}
+          {#</li>#}
+          {#<li class="nav-item">#}
+            {#<a class="nav-link disabled" href="#">Disabled</a>#}
+          {#</li>#}
+        {#</ul>#}
+      {#</div>#}
+
+      {#<ul class="navbar-nav mr-auto list-inline float-right">#}
+        {#<li class="nav-item list-inline-item dropdown">#}
+          {#<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">#}
+            {#<img src="{{ asset('images/guest_64.png') }}"#}
+                 {#height="30" width="30" alt="">#}
+          {#</a>#}
+          {#<div class="dropdown-menu dropdown-menu-right dropdown-menu-grape" aria-labelledby="navbarDropdown">#}
+            {#<a class="dropdown-item" href="#">My profile</a>#}
+            {#<a class="dropdown-item" href="#">Settings</a>#}
+            {#<div class="dropdown-divider"></div>#}
+          {#</div>#}
+        {#</li>#}
+      {#</ul>#}
+    {#</nav>#}
+    {% block body %}{% endblock %}
+    {% block javascripts %}
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous"></script>
+    <!-- Popper -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
+            integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+            crossorigin="anonymous"></script>
+    <!-- Bootstrap 4 -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"
+            integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+            crossorigin="anonymous"></script>
+    <!-- Font Awesome 5 -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.1/js/all.js"></script>
+    <!-- Bootstrap Datepicker -->
+    <script src="{{ asset('js/datepicker.min.js') }}"></script>
+    <script src="{{ asset('js/i18n/datepicker.ru-RU.js') }}"></script>
+      <script>
+        $(document).ready(function() {
+          $('[data-toggle="datepicker"]').each(function () {
+            $(this).datepicker({
+              language: 'ru-RU',
+              format: 'yyyy-mm-dd',
+              autoHide: true
+            });
+          });
+        });
+      </script>
+    {% endblock %}
+  </body>
+</html>
